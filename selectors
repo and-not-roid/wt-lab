@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Selectors</title>
+    <style>
+        /* Universal Selector */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        /* Type Selector */
+        p {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: #ff0;
+            font-weight: bold;
+        }
+
+        /* ID Selector */
+        #unique {
+            color: #007bff;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        /* Group Selector */
+        h2, h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        /* Descendant Selector */
+        div.container p {
+            color: #006400;
+        }
+
+        /* Child Selector */
+        div.container > p {
+            font-size: 1.1em;
+        }
+
+        /* Adjacent Sibling Selector */
+        h3 + p {
+            color: #800080;
+            font-weight: bold;
+        }
+
+        /* General Sibling Selector */
+        h3 ~ p {
+            color: #a52a2a;
+        }
+
+        /* Attribute Selector */
+        a[href] {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a[href^="https"] {
+            font-weight: bold;
+        }
+
+        a[href*="example"] {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3 Selectors Demonstration</h1>
+
+    <h2>1. Universal Selector</h2>
+    <p>* applies styles to all elements, ensuring consistency across the page.</p>
+
+    <h2>2. Type Selector</h2>
+    <p>This paragraph is styled using the `p` type selector.</p>
+
+    <h2>3. Class Selector</h2>
+    <p class="highlight">This text is highlighted using a class selector.</p>
+
+    <h2>4. ID Selector</h2>
+    <p id="unique">This paragraph is styled with an ID selector.</p>
+
+    <h2>5. Group Selector</h2>
+    <h3>Group Selectors</h3>
+    <p>Both `h2` and `h3` elements share the same style using a group selector.</p>
+
+    <h2>6. Descendant Selector</h2>
+    <div class="container">
+        <p>This paragraph is styled as a descendant of the `div.container`.</p>
+    </div>
+
+    <h2>7. Child Selector</h2>
+    <div class="container">
+        <p>This is a direct child of the `div.container`.</p>
+    </div>
+
+    <h2>8. Adjacent Sibling Selector</h2>
+    <h3>Adjacent Sibling</h3>
+    <p>This paragraph is styled because it directly follows an `h3` element.</p>
+
+    <h2>9. General Sibling Selector</h2>
+    <h3>General Sibling</h3>
+    <p>This paragraph is styled as a general sibling of the `h3`.</p>
+    <p>This one too!</p>
+
+    <h2>10. Attribute Selector</h2>
+    <a href="https://www.example.com">This link has an href attribute starting with "https" and contains "example".</a>
+    <br>
+    <a href="mailto:example@example.com">This email link is styled by the `[href]` attribute selector.</a>
+</body>
+</html>
