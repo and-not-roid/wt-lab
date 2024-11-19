@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Grid Layout</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Grid container */
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "nav main"
+                "sidebar main"
+                "footer footer";
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto auto 1fr auto;
+            height: 100vh;
+            gap: 10px;
+        }
+
+        /* Areas */
+        header {
+            grid-area: header;
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        main {
+            grid-area: main;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 2px solid #ddd;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <h1>Welcome to Grid Layout</h1>
+        </header>
+        <nav>
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Main Content</h2>
+            <p>This is the main content area. It adjusts its size dynamically based on the grid layout.</p>
+        </main>
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>This is the sidebar content, which complements the main area.</p>
+        </div>
+        <footer>
+            <p>&copy; 2024 Grid Layout Example. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
