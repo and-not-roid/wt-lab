@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ways to Style an HTML Document</title>
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .internal-style {
+            color: #007bff;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .external-style {
+            margin: 20px 0;
+            color: green;
+            text-decoration: underline;
+        }
+    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ways to Add Styles to an HTML Document</h1>
+    </header>
+
+    <main>
+        <!-- Inline CSS -->
+        <section>
+            <h2 style="color: purple; font-size: 1.5em;">1. Inline CSS</h2>
+            <p style="background-color: #eee; padding: 10px; border: 1px solid #ccc;">
+                This text is styled using <strong>inline CSS</strong>. The styles are applied directly to the HTML element using the <code>style</code> attribute.
+            </p>
+        </section>
+
+        <!-- Internal CSS -->
+        <section>
+            <h2 class="internal-style">2. Internal CSS</h2>
+            <p>
+                This text is styled using <strong>internal CSS</strong>. The styles are defined within the <code>&lt;style&gt;</code> element in the document's <code>&lt;head&gt;</code>.
+            </p>
+        </section>
+
+        <!-- External CSS -->
+        <section>
+            <h2 class="external-style">3. External CSS</h2>
+            <p>
+                This text is styled using <strong>external CSS</strong>. The styles are defined in a separate CSS file linked to the document using the <code>&lt;link&gt;</code> element.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+styles.css
+
+
+
+h2.external-style {
+    font-size: 1.5em;
+    font-style: italic;
+}
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
