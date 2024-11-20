@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #content {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            display: none;
+            /* Initially hidden */
+        }
+    </style>
+</head>
+
+<body>
+    <button id="showBtn">Show</button>
+    <button id="hideBtn">Hide</button>
+    <button id="toggleBtn">Toggle</button>
+
+    <div id="content">Hello, I am some content!</div>
+
+    <script>
+        $(document).ready(function () {
+            $('#showBtn').click(function () {
+                $('#content').show();
+            });
+
+            $('#hideBtn').click(function () {
+                $('#content').hide();
+            });
+
+            $('#toggleBtn').click(function () {
+                $('#content').toggle();
+            });
+        });
+    </script>
+</body>
+
+</html>

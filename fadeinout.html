@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Fading Effects Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #content {
+            width: 200px;
+            height: 100px;
+            background-color: lightcoral;
+            display: none;
+            /* Initially hidden */
+        }
+    </style>
+</head>
+
+<body>
+    <button id="fadeInBtn">Fade In</button>
+    <button id="fadeOutBtn">Fade Out</button>
+    <button id="fadeToggleBtn">Fade Toggle</button>
+    <button id="fadeToBtn">Fade To 50%</button>
+
+    <div id="content">Hello, I am some content!</div>
+
+    <script>
+        $(document).ready(function () {
+            $('#fadeInBtn').click(function () {
+                $('#content').fadeIn('slow');
+            });
+
+            $('#fadeOutBtn').click(function () {
+                $('#content').fadeOut('slow');
+            });
+
+            $('#fadeToggleBtn').click(function () {
+                $('#content').fadeToggle('slow');
+            });
+
+            $('#fadeToBtn').click(function () {
+                $('#content').fadeTo('slow', 0.5);
+            });
+        });
+    </script>
+</body>
+
+</html>

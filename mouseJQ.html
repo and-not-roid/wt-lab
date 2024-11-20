@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Multiple Events Demo</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #interactiveElement {
+            width: 250px;
+            padding: 20px;
+            background-color: #add8e6;
+            border: 2px solid #000;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+            outline: none;
+            /* Remove outline for focus */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="interactiveElement" tabindex="0">
+        Interact with Me!
+    </div>
+
+    <!-- jQuery Script -->
+    <script>
+        $(document).ready(function () {
+            const $elem = $("#interactiveElement");
+
+            // 1. Click Event
+            $elem.click(function () {
+                $(this).css("background-color", getRandomColor());
+                console.log("Element clicked.");
+            });
+
+            // 2. Double Click Event
+            $elem.dblclick(function () {
+                $(this).css("background-color", getRandomColor());
+                alert("Element double-clicked!");
+            });
+
+            // 3. Mouse Enter Event
+            $elem.mouseenter(function () {
+                $(this).css("border-color", "green");
+                console.log("Mouse entered.");
+            });
+
+            // 4. Mouse Leave Event
+            $elem.mouseleave(function () {
+                $(this).css("border-color", "#000");
+                console.log("Mouse left.");
+            });
+
+            // 5. Mouse Down Event
+            $elem.mousedown(function () {
+                $(this).css("background-color", "orange");
+                console.log("Mouse button pressed down.");
+            });
+
+            // 6. Mouse Up Event
+            $elem.mouseup(function () {
+                $(this).css("background-color", "#add8e6");
+                console.log("Mouse button released.");
+            });
+
+            // 7. Hover Event (Combines mouseenter and mouseleave)
+            $elem.hover(
+                function () {
+                    $(this).css("opacity", "0.8");
+                    console.log("Hover in.");
+                },
+                function () {
+                    $(this).css("opacity", "1");
+                    console.log("Hover out.");
+                }
+            );
+
+            // 8. On Event for Focus and Blur
+            $elem.on("focus", function () {
+                $(this).css("border-color", "blue");
+                console.log("Element focused.");
+            });
+
+            $elem.on("blur", function () {
+                $(this).css("border-color", "#000");
+                console.log("Element lost focus.");
+            });
+
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        });
+    </script>
+</body>
+
+</html>
